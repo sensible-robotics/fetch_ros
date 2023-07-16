@@ -1,13 +1,11 @@
-cmake_minimum_required(VERSION 2.8.12)
+cmake_minimum_required(VERSION 3.16.0)
 project(fetch_description)
 
-find_package(catkin)
-catkin_package()
+find_package(ament_cmake REQUIRED)
 
-install(DIRECTORY meshes
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+install(DIRECTORY meshes robots
+  DESTINATION share/${PROJECT_NAME}/
 )
 
-install(DIRECTORY robots
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
+ament_package()
+
